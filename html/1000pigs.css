@@ -1,0 +1,133 @@
+/* make keyframes that tell the start state and the end state of our object */
+@import url(http://fonts.googleapis.com/css?family=Ultra);
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+body {
+        margin: 0px;
+        padding: 0px;
+        background: #555;
+        text-align: center;
+        /* IE10 Consumer Preview */ 
+        background-image: url(img/bg.png);
+}
+h1 {
+    font-family: 'Ultra', serif;
+    font-size: 6em;
+    height:auto;
+    margin: 20px;
+      text-shadow: 2px 3px 3px #292929;  
+        letter-spacing: -7px;  
+        -webkit-text-stroke: 1px white;  
+
+}
+#pigsArea {
+    width:850px;
+    margin-left: auto ;
+    margin-right: auto ;
+
+}
+
+
+.pigHolder {
+    float:left; 
+    width:154px; 
+    height:154px; 
+    /*overflow:hidden; */
+    position: relative;
+    border:6px solid rgba(0,0,0,0) ; 
+    border-radius: 2px ;
+
+}
+
+.pigImg {
+    border-radius: 6px ;
+    opacity:0;
+    position:absolute; 
+    width:150px; 
+    height:150px; 
+    
+    top:0; 
+    left:0; 
+    z-index:1; 
+   
+    /*background:#FFF; */
+    border:2px solid #ccc; 
+    transition: width 0.25s, height 0.25s, top 0.25s, left 0.25s, transform 0.25s;         
+    -webkit-transition: width 0.25s, height 0.25s, top 0.25s, left 0.25s, -webkit-transform 0.25s;         
+}
+
+.pigHolder:hover {
+    overflow:visible;
+}
+.pigImg:hover  {
+    z-index:2;
+    
+    
+
+     width:200px;
+    height:200px;
+    top:-25px;
+    left:-25px;
+
+
+}
+
+#pigsArea>.pigholder:nth-of-type(6n) .pigImg:hover{
+
+    -ms-transform:rotate(7deg); /* IE 9 */
+    -webkit-transform:rotate(7deg); /* Safari and Chrome */
+    transform:rotate(7deg); 
+}
+#pigsArea>.pigholder:nth-of-type(6n+1) .pigImg:hover{
+
+    -ms-transform:rotate(-6deg); /* IE 9 */
+    -webkit-transform:rotate(-6deg); /* Safari and Chrome */
+    transform:rotate(-6deg); 
+}
+#pigsArea>.pigholder:nth-of-type(6n+2) .pigImg:hover{
+
+    -ms-transform:rotate(11deg); /* IE 9 */
+    -webkit-transform:rotate(11deg); /* Safari and Chrome */
+    transform:rotate(11deg); 
+}
+#pigsArea>.pigholder:nth-of-type(6n+3) .pigImg:hover{
+
+    -ms-transform:rotate(-9deg); /* IE 9 */
+    -webkit-transform:rotate(-9deg); /* Safari and Chrome */
+    transform:rotate(-9deg); 
+}
+#pigsArea>.pigholder:nth-of-type(6n+4) .pigImg:hover{
+
+    -ms-transform:rotate(8deg); /* IE 9 */
+    -webkit-transform:rotate(8deg); /* Safari and Chrome */
+    transform:rotate(8deg); 
+}
+#pigsArea>.pigholder:nth-of-type(6n+5) .pigImg:hover{
+
+    -ms-transform:rotate(-12deg); /* IE 9 */
+    -webkit-transform:rotate(-12deg); /* Safari and Chrome */
+    transform:rotate(-12deg); 
+}
+
+.pigImg.loaded {
+     /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+     -webkit-animation:fadeIn ease-in 1; 
+    -moz-animation:fadeIn ease 1;
+    animation:fadeIn ease-in 1;
+
+     /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+    -webkit-animation-fill-mode:forwards; 
+    -moz-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+ 
+    -webkit-animation-duration:0.25s;
+    -moz-animation-duration:1.25s;
+    animation-duration:0.25s;
+}
+
+#nopigs {
+    visibility: hidden;
+}
+
+
